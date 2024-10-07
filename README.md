@@ -266,7 +266,7 @@ not have these limitations.
 ## How to contribute or extend arcpy_metadata
 Contributions are well come! Please fork and submit pull requests.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to extend arcpy_metadata to new attributes
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to extend arcpy_metadata to new attributes.
 
 
 ## Acknowledgements
@@ -274,3 +274,4 @@ arcpy_metadata is maintained by Nick Santos at the California Department of Tech
 
 arcpy_metadata was initially a project of the [UC Davis Center for Watershed Sciences](https://watershed.ucdavis.edu) and received significant contributions from the [World Resources Institute](https://www.wri.org). It was created as part of a larger project funded by the California Department of Fish and Wildlife [Biogeographic Data Branch](http://www.dfg.ca.gov/biogeodata/) and further developed for [Global Forest Watch](https://www.globalforestwatch.org). We thank our funders for their support and their commitment to high quality geospatial data.
 
+`arcpy_metadata` is not affiliated with or endorsed by Esri, makers of ArcGIS and arcpy software.
