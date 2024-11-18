@@ -466,12 +466,16 @@ class MetadataEditor(object):
                 else:
                     return datetime.strptime(self.__dict__["_{0}".format(n)].value, "%Y-%m-%d").date()
             elif elements[n]['type'] == "time":
-                if len(self.__dict__["_{0}".format(n)].value) == 8 and self.__dict__["_{0}".format(n)].value.find(":") == -1:
-                    return datetime.strptime(self.__dict__["_{0}".format(n)].value, "%H%M%S%f").time()
-                elif len(self.__dict__["_{0}".format(n)].value) <= 8:
-                    return datetime.strptime(self.__dict__["_{0}".format(n)].value, "%H:%M:%S").time()
+                # Retrieve the value as a string and ensure it has leading zeros
+                time_value = str(self.__dict__["_{0}".format(n)].value).zfill(
+                    8)  # Ensures it is 8 characters long, padded with zeros
+
+                if len(time_value) == 8 and ":" not in time_value:
+                    return datetime.strptime(time_value, "%H%M%S%f").time()
+                elif len(time_value) <= 8 and ":" in time_value:
+                    return datetime.strptime(time_value, "%H:%M:%S").time()
                 else:
-                    return datetime.strptime(self.__dict__["_{0}".format(n)].value, "%I:%M:%S%p")
+                    return datetime.strptime(time_value, "%I:%M:%S%p")
 
             elif elements[n]['type'] == "parent_item":
                 return self.__dict__["_{0}".format(n)]
